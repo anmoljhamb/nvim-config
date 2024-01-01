@@ -9,9 +9,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-[>", "<C-O>")
-vim.keymap.set("n", "<C-]>", "<C-I>")
-vim.keymap.set("n", "<M-w>", "<cmd>q!<CR>")
+vim.keymap.set("n", "<A-w>", "<cmd>q!<CR>")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
