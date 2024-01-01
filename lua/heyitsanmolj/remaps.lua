@@ -37,4 +37,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/heyitsanmolj/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vel", "<cmd>e ~/.config/nvim/after/plugin/lsp.lua<CR>");
+vim.keymap.set("n", "<leader>vek", "<cmd>e ~/.config/nvim/lua/heyitsanmolj/remaps.lua<CR>");
+vim.keymap.set("n", "<leader>vep", "<cmd>e ~/.config/nvim/lua/heyitsanmolj/packer.lua<CR>");

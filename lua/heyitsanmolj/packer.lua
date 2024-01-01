@@ -36,4 +36,6 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+
+    use 'sudar/vim-arduino-syntax'
 end)

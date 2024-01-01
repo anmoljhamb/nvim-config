@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/heyitsanmolj/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-arduino-syntax"] = {
+    loaded = true,
+    path = "/home/heyitsanmolj/.local/share/nvim/site/pack/packer/start/vim-arduino-syntax",
+    url = "https://github.com/sudar/vim-arduino-syntax"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/heyitsanmolj/.local/share/nvim/site/pack/packer/start/vim-fugitive",
