@@ -35,3 +35,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
 keymap.set("n", "<A-b>", ":NvimTreeToggle<CR>")
+
+keymap.set("n", "<A-p>", ":Telescope git_files<CR>")
+keymap.set("n", "<leader>pf", ":Telescope find_files<CR>")
+keymap.set("n", "<leader>ps", ":Telescope live_grep<CR>")
