@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
 {
-    { import = "heyitsanmolj.plugins" }
+    { import = "heyitsanmolj.plugins" },
+    { import = "heyitsanmolj.plugins.lsp" }
 }, 
 {
     checker = {
