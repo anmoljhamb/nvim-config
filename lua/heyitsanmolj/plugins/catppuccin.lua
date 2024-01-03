@@ -1,6 +1,3 @@
-require("heyitsanmolj.core.colorscheme")
-
-
 return {
     "catppuccin/nvim",
     name = "catppuccin",
