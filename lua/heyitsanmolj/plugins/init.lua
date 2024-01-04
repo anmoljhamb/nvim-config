@@ -4,4 +4,5 @@ return {
 	"nvim-tree/nvim-web-devicons",
 	"tpope/vim-fugitive",
 	"theprimeagen/harpoon",
+	"mbbill/undotree",
 }
