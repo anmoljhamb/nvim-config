@@ -9,12 +9,16 @@ local km = vim.keymap
 ---------------------
 -- Insert Keybindings
 ---------------------
-
+--
 -- use jk to exit insert mode
 km.set("i", "jk", "<ESC>")
 km.set("i", "<A-BS>", "<C-W>")
 km.set("i", "<C-H>", "<C-W>")
 
+---------------------
+-- Normal Keybindings
+---------------------
+--
 -- clear search highlights
 km.set("n", "<leader>nh", ":nohl<CR>")
 
@@ -35,8 +39,29 @@ km.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 km.set("n", "<leader>tw", ":tabclose<CR>") -- close current tab
 km.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 km.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- plugin keymaps
+---------------------
+-- Visual Keybindings
+---------------------
+--
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("x", "<leader>p", [["_dP]])
+---------------------
+-- Plugin Keybindings
+---------------------
+--
 km.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
