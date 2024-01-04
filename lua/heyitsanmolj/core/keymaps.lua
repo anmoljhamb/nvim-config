@@ -39,26 +39,26 @@ km.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 km.set("n", "<leader>tw", ":tabclose<CR>") -- close current tab
 km.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 km.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+km.set("n", "n", "nzzzv")
+km.set("n", "N", "Nzzzv")
+km.set({ "n", "v" }, "<leader>y", [["+y]])
+km.set("n", "<leader>Y", [["+Y]])
+km.set({ "n", "v" }, "<leader>d", [["_d]])
+km.set("n", "<leader>f", vim.lsp.buf.format)
+km.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+km.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+km.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+km.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+km.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 km.set("n", "<A-w>", ":q!<CR>")
 
 ---------------------
 -- Visual Keybindings
 ---------------------
 --
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("x", "<leader>p", [["_dP]])
+km.set("v", "J", ":m '>+1<CR>gv=gv")
+km.set("v", "K", ":m '<-2<CR>gv=gv")
+km.set("x", "<leader>p", [["_dP]])
 ---------------------
 -- Plugin Keybindings
 ---------------------
@@ -88,25 +88,25 @@ km.set("n", "<leader>gs", ":Git<CR>")
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+km.set("n", "<leader>a", mark.add_file)
+km.set("n", "<C-e>", ui.toggle_quick_menu)
 
-vim.keymap.set("n", "<A-1>", function()
+km.set("n", "<A-1>", function()
 	ui.nav_file(1)
 end)
-vim.keymap.set("n", "<A-2>", function()
+km.set("n", "<A-2>", function()
 	ui.nav_file(2)
 end)
-vim.keymap.set("n", "<A-3>", function()
+km.set("n", "<A-3>", function()
 	ui.nav_file(3)
 end)
-vim.keymap.set("n", "<A-4>", function()
+km.set("n", "<A-4>", function()
 	ui.nav_file(4)
 end)
 
 -- Undo Tree
 --
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+km.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Vim TMUX Navigator
 --
