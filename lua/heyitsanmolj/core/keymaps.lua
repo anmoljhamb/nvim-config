@@ -77,3 +77,7 @@ km.set("v", "<C-_>", "gc", { remap = true })
 km.set("n", "<A-/>", "gcc", { remap = true })
 km.set("v", "<A-/>", "gc", { remap = true })
 km.set("i", "<C-_>", "<Esc>gccA ", { remap = true })
+
+-- Fugitve
+--
+km.set("n", "<leader>gs", ":Git<CR>")
