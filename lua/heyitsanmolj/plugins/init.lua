@@ -3,4 +3,5 @@ return {
 	"szw/vim-maximizer",
 	"nvim-tree/nvim-web-devicons",
 	"tpope/vim-fugitive",
+	"theprimeagen/harpoon",
 }
