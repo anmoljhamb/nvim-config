@@ -106,3 +106,10 @@ end)
 -- Undo Tree
 --
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- Vim TMUX Navigator
+--
+km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>")
+km.set("n", "<c-j>", ":TmuxNavigateDown<CR>")
+km.set("n", "<c-k>", ":TmuxNavigateUp<CR>")
+km.set("n", "<c-l>", ":TmuxNavigateRight<CR>")
