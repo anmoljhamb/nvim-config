@@ -2,4 +2,4 @@
 
 My settting for NeoVim
 
-![screenshot](./screenshot.png)
+![screenshot](./screenshot_1.png)
