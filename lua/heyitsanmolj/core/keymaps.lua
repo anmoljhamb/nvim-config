@@ -14,6 +14,7 @@ local km = vim.keymap
 km.set("i", "jk", "<ESC>")
 km.set("i", "<A-BS>", "<C-W>")
 km.set("i", "<C-H>", "<C-W>")
+km.set("i", "{", "{<Esc>o<Esc>i}<Esc>Vk=o")
 
 ---------------------
 -- Normal Keybindings
@@ -73,6 +74,7 @@ km.set("n", "<leader>pf", ":Telescope find_files<CR>")
 km.set("n", "<leader>ps", ":Telescope live_grep<CR>")
 
 -- Comments
+-- todo add a command to properly indent the comments
 km.set("n", "<C-_>", "gcc", { remap = true })
 km.set("v", "<C-_>", "gc", { remap = true })
 km.set("n", "<A-/>", "gcc", { remap = true })
