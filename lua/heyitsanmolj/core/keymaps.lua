@@ -14,7 +14,7 @@ local km = vim.keymap
 km.set("i", "jk", "<ESC>")
 km.set("i", "<A-BS>", "<C-W>")
 km.set("i", "<C-H>", "<C-W>")
-km.set("i", "{", "{<Esc>o<Esc>i}<Esc>Vk=o")
+-- km.set("i", "{", "{<Esc>o<Esc>i}<Esc>Vk=o")
 
 ---------------------
 -- Normal Keybindings
@@ -64,7 +64,7 @@ km.set("x", "<leader>p", [["_dP]])
 -- Plugin Keybindings
 ---------------------
 --
-km.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+km.set("n", "<leader>wm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
 km.set("n", "<A-b>", ":NvimTreeToggle<CR>")
