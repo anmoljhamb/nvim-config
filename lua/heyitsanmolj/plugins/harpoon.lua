@@ -8,17 +8,10 @@ return {
 		km.set("n", "<leader>a", mark.add_file)
 		km.set("n", "<C-e>", ui.toggle_quick_menu)
 
-		km.set("n", "<A-1>", function()
-			ui.nav_file(1)
-		end)
-		km.set("n", "<A-2>", function()
-			ui.nav_file(2)
-		end)
-		km.set("n", "<A-3>", function()
-			ui.nav_file(3)
-		end)
-		km.set("n", "<A-4>", function()
-			ui.nav_file(4)
-		end)
+		for i = 1, 10 do
+			km.set("n", "<A-" .. i .. ">", function()
+				ui.nav_file(i)
+			end)
+		end
 	end,
 }
