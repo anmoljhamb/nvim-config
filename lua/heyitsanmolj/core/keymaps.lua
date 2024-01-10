@@ -53,6 +53,7 @@ km.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 km.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 km.set("n", "<A-w>", ":q!<CR>")
 km.set("n", "<A-d>", "<C-n>", { remap = true })
+km.set("n", "<leader>oi", ":OrganizeImports<CR>")
 
 ---------------------
 -- Visual Keybindings
