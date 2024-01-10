@@ -7,4 +7,5 @@ return {
 	"mbbill/undotree",
 	"airblade/vim-gitgutter",
 	"mg979/vim-visual-multi",
+	"cohama/lexima.vim",
 }
