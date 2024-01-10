@@ -5,4 +5,5 @@ return {
 	"tpope/vim-fugitive",
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
+	"airblade/vim-gitgutter",
 }
