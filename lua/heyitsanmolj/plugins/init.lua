@@ -6,4 +6,5 @@ return {
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
 	"airblade/vim-gitgutter",
+	"mg979/vim-visual-multi",
 }
