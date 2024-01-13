@@ -43,3 +43,5 @@ opt.incsearch = true
 opt.scrolloff = 8
 opt.colorcolumn = "80"
 opt.updatetime = 50
+
+vim.lsp.set_log_level("info")
