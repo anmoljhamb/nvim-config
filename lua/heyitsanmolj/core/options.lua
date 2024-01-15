@@ -44,4 +44,4 @@ opt.scrolloff = 8
 opt.colorcolumn = "80"
 opt.updatetime = 50
 
-vim.lsp.set_log_level("info")
+vim.lsp.set_log_level("off")
