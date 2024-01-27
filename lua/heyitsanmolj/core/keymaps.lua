@@ -70,6 +70,7 @@ km.set("n", "<leader>wm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
 km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>")
+km.set("n", "<A-c>", ":NvimTreeCollapse<CR>:NvimTreeRefresh<CR>")
 
 km.set("n", "<A-p>", ":Telescope git_files<CR>")
 km.set("n", "<leader>pf", ":Telescope find_files<CR>")
