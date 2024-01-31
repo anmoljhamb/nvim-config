@@ -46,3 +46,4 @@ opt.updatetime = 50
 
 vim.lsp.set_log_level("off")
 vim.api.nvim_set_option("clipboard", "unnamed")
+vim.opt.clipboard:append("unnamedplus")
