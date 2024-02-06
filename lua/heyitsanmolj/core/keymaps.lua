@@ -22,6 +22,7 @@ km.set("i", "<C-H>", "<C-W>")
 --
 -- clear search highlights
 km.set("n", "<leader>nh", ":nohl<CR>")
+km.set("n", "<C-s>", ":w<CR>")
 
 -- delete single character without copying into register
 km.set("n", "x", '"_x')
