@@ -76,6 +76,7 @@ km.set("n", "<A-c>", ":NvimTreeCollapse<CR>:NvimTreeRefresh<CR>")
 km.set("n", "<A-p>", ":Telescope git_files<CR>")
 km.set("n", "<leader>pf", ":Telescope find_files<CR>")
 km.set("n", "<leader>ps", ":Telescope live_grep<CR>")
+km.set("n", "<leader>fc", ":Telescope flutter commands<CR>")
 
 -- Comments
 -- todo add a command to properly indent the comments
