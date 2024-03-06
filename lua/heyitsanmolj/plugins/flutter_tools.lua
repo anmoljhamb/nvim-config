@@ -8,12 +8,12 @@ return {
 	config = function()
 		require("flutter-tools").setup({
 			widget_guides = {
-				enabled = false,
+				enabled = true,
 			},
 			closing_tags = {
-				highlight = "ErrorMsg", -- highlight for the closing tag
+				-- highlight = "ErrorMsg", -- highlight for the closing tag
 				prefix = ">", -- character to use for close tag e.g. > Widget
-				enabled = false, -- set to false to disable
+				enabled = true, -- set to false to disable
 			},
 		})
 	end,
