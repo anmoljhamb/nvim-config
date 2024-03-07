@@ -47,3 +47,8 @@ opt.updatetime = 50
 vim.lsp.set_log_level("off")
 vim.api.nvim_set_option("clipboard", "unnamed")
 vim.opt.clipboard:append("unnamedplus")
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.norg" },
+	command = "set conceallevel=3",
+})
