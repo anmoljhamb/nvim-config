@@ -9,6 +9,8 @@ return {
 			load = {
 				["core.defaults"] = {}, -- Loads default behaviour
 				["core.keybinds"] = {},
+				["core.itero"] = {},
+				["core.pivot"] = {},
 				["core.concealer"] = {
 					config = {
 						icon_preset = "varied",
