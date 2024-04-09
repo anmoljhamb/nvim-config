@@ -68,7 +68,10 @@ return {
 			keymap.set("n", "<leader>K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+			keymap.set("n", "<leader>lr", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			opts.desc = "LSP Info"
+			keymap.set("n", "<leader>li", ":LspInfo<CR>", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
