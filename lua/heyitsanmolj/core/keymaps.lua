@@ -23,7 +23,7 @@ km.set("i", "<C-H>", "<C-W>")
 --
 -- clear search highlights
 km.set("n", "<leader>nh", ":nohl<CR>")
-km.set("n", "<C-s>", ":w<CR>")
+km.set("n", "<C-s>", ":w!<CR>")
 
 -- delete single character without copying into register
 km.set("n", "x", '"_x')
@@ -104,3 +104,7 @@ km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>")
 km.set("n", "<c-j>", ":TmuxNavigateDown<CR>")
 km.set("n", "<c-k>", ":TmuxNavigateUp<CR>")
 km.set("n", "<c-l>", ":TmuxNavigateRight<CR>")
+
+-- LSP
+--
+km.set("n", "<leader>li", ":LspInfo<CR>")
