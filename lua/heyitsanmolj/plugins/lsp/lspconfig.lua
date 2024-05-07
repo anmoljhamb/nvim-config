@@ -186,6 +186,12 @@ return {
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "cpp", "c" },
+		})
+
 		-- configure python server
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
@@ -196,6 +202,21 @@ return {
 		lspconfig["arduino_language_server"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			cmd = {
+				"/home/anmol/go/bin/arduino-language-server",
+				-- ">",
+				-- "~/logfile.log",
+				-- "2>&1",
+
+				-- "-clangd",
+				-- "/usr/bin/clangd",
+				-- "-cli",
+				-- "/home/anmol/bin/arduino-cli",
+				-- "-cli-config",
+				-- "$HOME/.arduino15/arduino-cli.yaml",
+				-- "-fqbn",
+				-- "esp32:esp32:esp32doit-devkit-v1",
+			},
 		})
 
 		-- configure lua server (with special settings)
