@@ -197,6 +197,12 @@ return {
 			filetypes = { "cpp", "c" },
 		})
 
+		-- configure php lsp
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure python server
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
