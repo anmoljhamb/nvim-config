@@ -111,3 +111,7 @@ km.set("n", "<c-l>", ":TmuxNavigateRight<CR>")
 -- LSP
 --
 km.set("n", "<leader>li", ":LspInfo<CR>")
+
+-- Liveserver
+km.set("n", "<A-l>", ":LiveServerStart<CR>")
+km.set("n", "<A-S-l>", ":LiveServerStop<CR>")
