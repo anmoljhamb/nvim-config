@@ -12,6 +12,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
 			python = { "flake8" },
+			php = { "phpcs" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

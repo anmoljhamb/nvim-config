@@ -20,6 +20,7 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "autopep8", "isort", "black" },
+				php = { "pretty-php" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
