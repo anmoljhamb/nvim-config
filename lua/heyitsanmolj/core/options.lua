@@ -7,6 +7,15 @@ opt.relativenumber = true
 -- tabbing and intendation
 opt.tabstop = 2
 opt.shiftwidth = 2
+-- Define settings for PHP files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "php",
+	callback = function()
+		vim.opt_local.tabstop = 4
+		vim.opt_local.shiftwidth = 4
+	end,
+})
+
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
