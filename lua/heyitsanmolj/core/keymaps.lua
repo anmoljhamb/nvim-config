@@ -115,3 +115,5 @@ km.set("n", "<leader>li", ":LspInfo<CR>")
 -- Liveserver
 km.set("n", "<A-l>", ":LiveServerStart<CR>")
 km.set("n", "<A-S-l>", ":LiveServerStop<CR>")
+
+km.set("n", "<leader>yf", "ggVGy<c-o>")
