@@ -13,6 +13,7 @@ return {
 			svelte = { "eslint_d" },
 			python = { "flake8" },
 			php = { "phpmd" },
+			java = { "checkstyle" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
