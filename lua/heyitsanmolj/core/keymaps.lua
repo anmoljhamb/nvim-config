@@ -117,19 +117,3 @@ km.set("n", "<A-l>", ":LiveServerStart<CR>")
 km.set("n", "<A-S-l>", ":LiveServerStop<CR>")
 
 km.set("n", "<leader>yf", "ggVGy<c-o>")
-
--- Function to paste the current file name into the buffer
-local function paste_current_file_name()
-	local file_name = vim.fn.expand("%:t") -- Get the current file name
-	local current_line = vim.api.nvim_get_current_line() -- Get the current line content
-	local col = vim.fn.col(".") -- Get the current column position
-
-	-- Insert the file name at the current cursor position
-	local new_line = current_line:sub(1, col - 1) .. file_name .. current_line:sub(col)
-	vim.api.nvim_set_current_line(new_line)
-end
-
--- Create a command to call the function
-vim.api.nvim_create_user_command("PasteFileName", paste_current_file_name, {})
--- Map the command to a keybinding (e.g., <leader>pf)
-vim.api.nvim_set_keymap("n", "<leader>fn", ":PasteFileName<CR>", { noremap = true, silent = true })
