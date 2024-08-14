@@ -135,6 +135,7 @@ return {
 					description = "Organize Imports",
 				},
 			},
+			settings = {},
 		})
 
 		-- configure css server

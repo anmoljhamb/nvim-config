@@ -21,6 +21,7 @@ return {
 				lua = { "stylua" },
 				python = { "autopep8", "isort", "black" },
 				php = { "pretty-php" },
+				java = { "google-java-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
