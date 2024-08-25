@@ -19,7 +19,7 @@ return {
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "autopep8", "isort", "black" },
+				python = { "black", "isort" },
 				php = { "pretty-php" },
 				java = { "google-java-format" },
 			},
