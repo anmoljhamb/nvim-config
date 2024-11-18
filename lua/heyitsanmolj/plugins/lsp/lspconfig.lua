@@ -96,20 +96,20 @@ return {
 			on_attach = on_attach,
 		})
 
-		lspconfig["jsonls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				json = {
-					schemas = {
-						{
-							fileMatch = { "package.json" },
-							url = "https://json.schemastore.org/package.json",
-						},
-					},
-				},
-			},
-		})
+		-- lspconfig["jsonls"].setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- 	settings = {
+		-- 		json = {
+		-- 			schemas = {
+		-- 				{
+		-- 					fileMatch = { "package.json" },
+		-- 					url = "https://json.schemastore.org/package.json",
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
@@ -214,6 +214,7 @@ return {
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			root_dir = require("lspconfig").util.root_pattern(".git", "pyrightconfig.json", "requirements.txt"),
 		})
 
 		-- configure arduino_language_server server
