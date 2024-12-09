@@ -56,3 +56,9 @@ opt.updatetime = 50
 vim.lsp.set_log_level("warn")
 vim.api.nvim_set_option("clipboard", "unnamed")
 vim.opt.clipboard:append("unnamedplus")
+
+vim.filetype.add({
+	extension = {
+		ejs = "html",
+	},
+})

@@ -94,6 +94,7 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "html", "ejs" },
 		})
 
 		lspconfig["rust_analyzer"].setup({
@@ -121,6 +122,7 @@ return {
 				},
 			},
 			settings = {},
+			filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "ejs" },
 		})
 
 		-- configure css server

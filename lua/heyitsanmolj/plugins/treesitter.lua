@@ -4,6 +4,7 @@ return {
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 
+		vim.treesitter.language.register("html", "ejs")
 		configs.setup({
 			ensure_installed = {
 				"c",
