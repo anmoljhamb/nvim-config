@@ -84,6 +84,16 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		lspconfig["docker_compose_language_service"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["dockerls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure java server
 		lspconfig["jdtls"].setup({
 			capabilities = capabilities,
