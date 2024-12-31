@@ -6,6 +6,6 @@ return {
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
 	"airblade/vim-gitgutter",
-	"mg979/vim-visual-multi",
-	"cohama/lexima.vim",
+	"cohama/lexima.vim", -- For auto closing
+	"tpope/vim-surround",
 }
