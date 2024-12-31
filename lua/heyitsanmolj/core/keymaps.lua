@@ -90,14 +90,13 @@ km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle
 km.set("n", "<A-p>", ":Telescope git_files<CR>", { desc = "Telescope Git Files" })
 km.set("n", "<leader>pf", ":Telescope find_files<CR>", { desc = "Telescope All Files" })
 km.set("n", "<leader>ps", ":Telescope live_grep<CR>", { desc = "Telescope Search in Current Directory" })
-km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
 km.set("n", "<A-o>", ":Telescope buffers<CR>", { desc = "Telescope Open Buffers" })
 
 -- Help
 km.set("n", "<leader>h?", ":Telescope help_tags<CR>", { desc = "Telescope Find help tags" })
 km.set("n", "<leader>k?", ":Telescope keymaps<CR>", { desc = "Telescope List keymaps" })
 km.set("n", "<leader>c?", ":Telescope commands<CR>", { desc = "Telescope Find commands" })
-km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
+km.set("n", "<leader>gbs", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
 
 -- Additional features
 km.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Search in current buffer" })
@@ -118,6 +117,8 @@ km.set("i", "<C-_>", "<Esc>gccA ", { remap = true, desc = "Comment" })
 -- Fugitve
 --
 km.set("n", "<leader>gs", ":Git<CR>", { desc = "Git Status" })
+km.set("n", "<leader>gb", ":G blame<CR>", { desc = "Git Blame" })
+km.set("n", "<leader>gft", ":G fetch<CR>", { desc = "Git Fetch" })
 
 -- Undo Tree
 --
