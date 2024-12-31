@@ -33,6 +33,7 @@
   "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
   "vim-fugitive": { "branch": "master", "commit": "174230d6a7f2df94705a7ffd8d5413e27ec10a80" },
   "vim-gitgutter": { "branch": "main", "commit": "7b0b5098e3e57be86bb96cfbf2b8902381eef57c" },
+  "vim-matchup": { "branch": "master", "commit": "aca23ce53ebfe34e02c4fe07e29e9133a2026481" },
   "vim-maximizer": { "branch": "master", "commit": "2e54952fe91e140a2e69f35f22131219fcd9c5f1" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-tmux-navigator": { "branch": "master", "commit": "d847ea942a5bb4d4fab6efebc9f30d787fd96e65" },
