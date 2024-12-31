@@ -26,6 +26,7 @@ km.set("n", "<C-s>", ":w!<CR>")
 
 -- delete single character without copying into register
 km.set("n", "x", '"_x')
+km.set("v", "x", '"_x')
 
 -- increment/decrement numbers
 km.set("n", "<leader>+", "<C-a>") -- increment
@@ -55,7 +56,8 @@ km.set("n", "[Q", "<cmd>cfirst<CR>zz")
 km.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 km.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 km.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>]])
-km.set("n", "<A-w>", ":q!<CR>")
+km.set("n", "<A-q>", ":q!<CR>")
+km.set("n", "<A-w>", ":bd<CR>", { desc = "Close current buffer" })
 km.set("n", "<A-d>", "<C-n>", { remap = true })
 km.set("n", "<leader>oi", ":OrganizeImports<CR>")
 
@@ -73,13 +75,31 @@ km.set("x", "<leader>p", [["_dP]])
 km.set("n", "<leader>wm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
-km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>")
-km.set("n", "<A-c>", ":NvimTreeCollapse<CR>:NvimTreeRefresh<CR>")
+km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle NvimTree" })
 
-km.set("n", "<A-p>", ":Telescope git_files<CR>")
-km.set("n", "<leader>pf", ":Telescope find_files<CR>")
-km.set("n", "<leader>ps", ":Telescope live_grep<CR>")
-km.set("n", "<leader>fc", ":Telescope flutter commands<CR>")
+-- Telescope
+-- Files
+km.set("n", "<A-p>", ":Telescope git_files<CR>", { desc = "Git Files" })
+km.set("n", "<leader>pf", ":Telescope find_files<CR>", { desc = "All Files" })
+km.set("n", "<leader>ps", ":Telescope live_grep<CR>", { desc = "Search in Current Directory" })
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
+km.set("n", "<A-o>", ":Telescope buffers<CR>", { desc = "Open Buffers" })
+
+-- Help
+km.set("n", "<leader>h?", ":Telescope help_tags<CR>", { desc = "Find help tags" })
+km.set("n", "<leader>k?", ":Telescope keymaps<CR>", { desc = "List keymaps" })
+km.set("n", "<leader>c?", ":Telescope commands<CR>", { desc = "Find commands" })
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
+
+-- Additional features
+km.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Search in current buffer" })
+
+-- Git
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
+km.set("n", "<leader>gc", ":Telescope git_commits<CR>", { desc = "Search Git commits" })
+
+-- misc
+km.set("n", "<leader>tr", ":Telescope resume<CR>", { desc = "Resume last Telescope search" })
 
 -- Comments
 -- todo add a command to properly indent the comments
