@@ -12,36 +12,39 @@ local km = vim.keymap
 ---------------------
 --
 -- use jk to exit insert mode
-km.set("i", "jk", "<ESC>")
-km.set("i", "<A-BS>", "<C-W>")
-km.set("i", "<C-H>", "<C-W>")
+km.set("i", "jk", "<ESC>", { desc = "Escape to normal mode" })
+km.set("i", "<A-BS>", "<C-W>", { desc = "Erase via words" })
+km.set("i", "<C-H>", "<C-W>", { desc = "Erase via words" })
 
 ---------------------
 -- Normal Keybindings
 ---------------------
 --
 -- clear search highlights
-km.set("n", "<leader>nh", ":nohl<CR>")
-km.set("n", "<C-s>", ":w!<CR>")
+km.set("n", "<C-s>", ":w!<CR>", { desc = "Force Save a file" })
+km.set("n", "<A-s>", ":noautocmd write<CR>", { desc = "Save file without formatting" })
 
 -- delete single character without copying into register
-km.set("n", "x", '"_x')
-km.set("v", "x", '"_x')
+km.set("n", "x", '"_x', { desc = "Delete without copying" })
+km.set("v", "x", '"_x', { desc = "Delete without copying" })
 
 -- increment/decrement numbers
-km.set("n", "<leader>+", "<C-a>") -- increment
-km.set("n", "<leader>-", "<C-x>") -- decrement
+km.set("n", "<leader>+", "<C-a>", { desc = "Increment by 1" })
+km.set("n", "<leader>-", "<C-x>", { desc = "Decrement by 1" })
 
 -- window management
-km.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-km.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-km.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-km.set("n", "<leader>sx", ":close<CR>") -- close current split window
+km.set("n", "<leader>sv", "<C-w>v", { desc = "Split Window Vertically" })
+km.set("n", "<leader>sh", "<C-w>s", { desc = "Split Windows Horizontally" })
+km.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" }) --
+km.set("n", "<leader>sx", ":close<CR>", { desc = "Close current split window" })
 
-km.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-km.set("n", "<leader>tw", ":tabclose<CR>") -- close current tab
-km.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-km.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+km.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })
+km.set("n", "<A-t>", ":tabnew<CR>", { desc = "New Tab" })
+km.set("n", "<leader>tw", ":tabclose<CR>", { desc = "Close Tab" })
+km.set("n", "<Tab>", ":tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+km.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+km.set("n", "<S-Tab>", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+
 km.set("n", "n", "nzzzv")
 km.set("n", "N", "Nzzzv")
 km.set({ "n", "v" }, "<leader>y", [["+y]])
