@@ -82,24 +82,24 @@ km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle
 
 -- Telescope
 -- Files
-km.set("n", "<A-p>", ":Telescope git_files<CR>", { desc = "Git Files" })
-km.set("n", "<leader>pf", ":Telescope find_files<CR>", { desc = "All Files" })
-km.set("n", "<leader>ps", ":Telescope live_grep<CR>", { desc = "Search in Current Directory" })
-km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
-km.set("n", "<A-o>", ":Telescope buffers<CR>", { desc = "Open Buffers" })
+km.set("n", "<A-p>", ":Telescope git_files<CR>", { desc = "Telescope Git Files" })
+km.set("n", "<leader>pf", ":Telescope find_files<CR>", { desc = "Telescope All Files" })
+km.set("n", "<leader>ps", ":Telescope live_grep<CR>", { desc = "Telescope Search in Current Directory" })
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
+km.set("n", "<A-o>", ":Telescope buffers<CR>", { desc = "Telescope Open Buffers" })
 
 -- Help
-km.set("n", "<leader>h?", ":Telescope help_tags<CR>", { desc = "Find help tags" })
-km.set("n", "<leader>k?", ":Telescope keymaps<CR>", { desc = "List keymaps" })
-km.set("n", "<leader>c?", ":Telescope commands<CR>", { desc = "Find commands" })
-km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
+km.set("n", "<leader>h?", ":Telescope help_tags<CR>", { desc = "Telescope Find help tags" })
+km.set("n", "<leader>k?", ":Telescope keymaps<CR>", { desc = "Telescope List keymaps" })
+km.set("n", "<leader>c?", ":Telescope commands<CR>", { desc = "Telescope Find commands" })
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
 
 -- Additional features
-km.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Search in current buffer" })
+km.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Search in current buffer" })
 
 -- Git
-km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Search Git branches" })
-km.set("n", "<leader>gc", ":Telescope git_commits<CR>", { desc = "Search Git commits" })
+km.set("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Telescope Search Git branches" })
+km.set("n", "<leader>gc", ":Telescope git_commits<CR>", { desc = "Telescope Search Git commits" })
 
 -- misc
 km.set("n", "<leader>tr", ":Telescope resume<CR>", { desc = "Resume last Telescope search" })
