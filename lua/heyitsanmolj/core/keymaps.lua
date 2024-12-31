@@ -15,7 +15,6 @@ local km = vim.keymap
 km.set("i", "jk", "<ESC>")
 km.set("i", "<A-BS>", "<C-W>")
 km.set("i", "<C-H>", "<C-W>")
--- km.set("i", "{", "{<Esc>o<Esc>i}<Esc>Vk=o")
 
 ---------------------
 -- Normal Keybindings
@@ -117,3 +116,8 @@ km.set("n", "<A-l>", ":LiveServerStart<CR>")
 km.set("n", "<A-S-l>", ":LiveServerStop<CR>")
 
 km.set("n", "<leader>yf", "ggVGy<c-o>")
+
+-- Source
+km.set("n", "<leader><leader>x", "<cmd>source %<CR>")
+km.set("n", "<leader>x", ":.lua<CR>")
+km.set("v", "<leader>x", ":lua<CR>")
