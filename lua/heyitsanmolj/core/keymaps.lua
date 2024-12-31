@@ -55,8 +55,18 @@ km.set("n", "]Q", "<cmd>clast<CR>zz", { desc = "Last quick fix" })
 km.set("n", "[q", "<cmd>cprev<CR>zz", { desc = "Previous quick fix" })
 km.set("n", "[Q", "<cmd>cfirst<CR>zz", { desc = "First quick fix" })
 
+km.set("n", "<leader>ol", ":e#<CR>", { desc = "Open previously opened file" })
 km.set("n", "<A-q>", ":q!<CR>", { desc = "Close Neovim" })
 km.set("n", "<A-w>", ":bd!<CR>", { desc = "Close current buffer" })
+km.set("n", "<leader>bc", function()
+	local current_buf = vim.api.nvim_get_current_buf()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) and buf ~= current_buf then
+			vim.cmd("bdelete " .. buf)
+		end
+	end
+end, { desc = "Close all buffers except the current one" })
+
 km.set("n", "<leader>oi", ":OrganizeImports<CR>", { desc = "Organize Imports" })
 
 ---------------------

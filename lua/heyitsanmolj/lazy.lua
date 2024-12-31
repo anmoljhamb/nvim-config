@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "heyitsanmolj.plugins" },
 	{ import = "heyitsanmolj.plugins.lsp" },
+	{ import = "heyitsanmolj.plugins.flutter" },
+	{ import = "heyitsanmolj.plugins.misc" },
 	{ import = "heyitsanmolj.plugins.snippets" },
+	{ import = "heyitsanmolj.plugins.ui" },
+	{ import = "heyitsanmolj.plugins.ux" },
 }, {
 	checker = {
 		enabled = true,
