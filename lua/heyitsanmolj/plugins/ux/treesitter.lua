@@ -18,10 +18,42 @@ return {
 				"python",
 				"dart",
 			},
-
+			textobjects = {
+				enable = true,
+				select = {
+					enable = true,
+					keymaps = {
+						["af"] = "@function.outer", -- select around function
+						["if"] = "@function.inner", -- select inside function
+						["ac"] = "@class.outer", -- select around class
+						["ic"] = "@class.inner", -- select inside class
+					},
+				},
+				move = {
+					enable = true,
+					set_jumps = true,
+					goto_next_start = {
+						["]f"] = "@function.outer",
+						["]c"] = "@class.outer",
+					},
+					goto_next_end = {
+						["]F"] = "@function.outer",
+						["]C"] = "@class.outer",
+					},
+					goto_previous_start = {
+						["[f"] = "@function.outer",
+						["[c"] = "@class.outer",
+					},
+					goto_previous_end = {
+						["[F"] = "@function.outer",
+						["[C"] = "@class.outer",
+					},
+				},
+			},
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },
+			incremental_selection = { enable = true },
 			additional_vim_regex_highlighting = true,
 			rainbow = {
 				enable = false,
