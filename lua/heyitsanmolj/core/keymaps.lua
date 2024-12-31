@@ -20,19 +20,18 @@ km.set("i", "<C-H>", "<C-W>", { desc = "Erase via words" })
 -- Normal Keybindings
 ---------------------
 --
--- clear search highlights
 km.set("n", "<C-s>", ":w!<CR>", { desc = "Force Save a file" })
 km.set("n", "<A-s>", ":noautocmd write<CR>", { desc = "Save file without formatting" })
 
 -- delete single character without copying into register
 km.set("n", "x", '"_x', { desc = "Delete without copying" })
-km.set("v", "x", '"_x', { desc = "Delete without copying" })
 
 -- increment/decrement numbers
 km.set("n", "<leader>+", "<C-a>", { desc = "Increment by 1" })
 km.set("n", "<leader>-", "<C-x>", { desc = "Decrement by 1" })
 
 -- window management
+km.set("n", "<leader>wm", ":MaximizerToggle<CR>", { desc = "Maximize Current Window" })
 km.set("n", "<leader>sv", "<C-w>v", { desc = "Split Window Vertically" })
 km.set("n", "<leader>sh", "<C-w>s", { desc = "Split Windows Horizontally" })
 km.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" }) --
@@ -45,37 +44,33 @@ km.set("n", "<Tab>", ":tabn<CR>", { desc = "Go to next tab" }) --  go to next ta
 km.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 km.set("n", "<S-Tab>", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 
-km.set("n", "n", "nzzzv")
-km.set("n", "N", "Nzzzv")
-km.set({ "n", "v" }, "<leader>y", [["+y]])
-km.set("n", "<leader>Y", [["+Y]])
-km.set({ "n", "v" }, "<leader>d", [["_d]])
-km.set("n", "<leader>f", vim.lsp.buf.format)
-km.set("n", "<A-q>", "<cmd>copen<CR>")
-km.set("n", "]q", "<cmd>cnext<CR>zz")
-km.set("n", "]Q", "<cmd>clast<CR>zz")
-km.set("n", "[q", "<cmd>cprev<CR>zz")
-km.set("n", "[Q", "<cmd>cfirst<CR>zz")
-km.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-km.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-km.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>]])
-km.set("n", "<A-q>", ":q!<CR>")
-km.set("n", "<A-w>", ":bd<CR>", { desc = "Close current buffer" })
-km.set("n", "<A-d>", "<C-n>", { remap = true })
-km.set("n", "<leader>oi", ":OrganizeImports<CR>")
+km.set("n", "n", "nzzzv", { desc = "Center while searching" })
+km.set("n", "N", "Nzzzv", { desc = "Center while searching" })
+km.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
+km.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+km.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
+km.set("n", "<A-q>", "<cmd>copen<CR>", { desc = "Open quick fix list" })
+km.set("n", "]q", "<cmd>cnext<CR>zz", { desc = "Next quick fix" })
+km.set("n", "]Q", "<cmd>clast<CR>zz", { desc = "Last quick fix" })
+km.set("n", "[q", "<cmd>cprev<CR>zz", { desc = "Previous quick fix" })
+km.set("n", "[Q", "<cmd>cfirst<CR>zz", { desc = "First quick fix" })
+
+km.set("n", "<A-q>", ":q!<CR>", { desc = "Close Neovim" })
+km.set("n", "<A-w>", ":bd!<CR>", { desc = "Close current buffer" })
+km.set("n", "<leader>oi", ":OrganizeImports<CR>", { desc = "Organize Imports" })
 
 ---------------------
 -- Visual Keybindings
 ---------------------
 --
-km.set("v", "J", ":m '>+1<CR>gv=gv")
-km.set("v", "K", ":m '<-2<CR>gv=gv")
-km.set("x", "<leader>p", [["_dP]])
+km.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection up" })
+km.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection down" })
+km.set("x", "<leader>p", [["_dP]], { desc = "Paste without yanking" })
+
 ---------------------
 -- Plugin Keybindings
 ---------------------
 --
-km.set("n", "<leader>wm", ":MaximizerToggle<CR>")
 
 -- NvimTreeToggle
 km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle NvimTree" })
@@ -106,41 +101,36 @@ km.set("n", "<leader>tr", ":Telescope resume<CR>", { desc = "Resume last Telesco
 
 -- Comments
 -- todo add a command to properly indent the comments
-km.set("n", "<C-_>", "gcc", { remap = true })
-km.set("v", "<C-_>", "gc", { remap = true })
-km.set("n", "<A-/>", "gcc", { remap = true })
-km.set("v", "<A-/>", "gc", { remap = true })
-km.set("i", "<C-_>", "<Esc>gccA ", { remap = true })
+km.set("n", "<C-_>", "gcc", { remap = true, desc = "Comment" })
+km.set("v", "<C-_>", "gc", { remap = true, desc = "Comment" })
+km.set("i", "<C-_>", "<Esc>gccA ", { remap = true, desc = "Comment" })
 
 -- Fugitve
 --
-km.set("n", "<leader>gs", ":Git<CR>")
-
--- Harpoon
---
+km.set("n", "<leader>gs", ":Git<CR>", { desc = "Git Status" })
 
 -- Undo Tree
 --
-km.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+km.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree" })
 
 -- Vim TMUX Navigator
 --
-km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>")
-km.set("n", "<c-j>", ":TmuxNavigateDown<CR>")
-km.set("n", "<c-k>", ":TmuxNavigateUp<CR>")
-km.set("n", "<c-l>", ":TmuxNavigateRight<CR>")
+km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>", { desc = "Tmux navigate" })
+km.set("n", "<c-j>", ":TmuxNavigateDown<CR>", { desc = "Tmux navigate" })
+km.set("n", "<c-k>", ":TmuxNavigateUp<CR>", { desc = "Tmux navigate" })
+km.set("n", "<c-l>", ":TmuxNavigateRight<CR>", { desc = "Tmux navigate" })
 
 -- LSP
 --
-km.set("n", "<leader>li", ":LspInfo<CR>")
+km.set("n", "<leader>li", ":LspInfo<CR>", { desc = "LSP Info" })
 
 -- Liveserver
-km.set("n", "<A-l>", ":LiveServerStart<CR>")
-km.set("n", "<A-S-l>", ":LiveServerStop<CR>")
+km.set("n", "<A-l>", ":LiveServerStart<CR>", { desc = "Live Server" })
+km.set("n", "<A-S-l>", ":LiveServerStop<CR>", { desc = "Live Server" })
 
-km.set("n", "<leader>yf", "ggVGy<c-o>")
+km.set("n", "<leader>yf", "ggVGy<c-o>", { desc = "Yank the current file" })
 
 -- Source
-km.set("n", "<leader><leader>x", "<cmd>source %<CR>")
-km.set("n", "<leader>x", ":.lua<CR>")
-km.set("v", "<leader>x", ":lua<CR>")
+km.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source the NeoVim config" })
+km.set("n", "<leader>x", ":.lua<CR>", { desc = "Execute the current line" })
+km.set("v", "<leader>x", ":lua<CR>", { desc = "Execute the current selection" })
