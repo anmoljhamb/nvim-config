@@ -75,3 +75,8 @@ if vim.fn.has("wsl") == 1 then
 		end,
 	})
 end
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = { "docker-compose*.yml", "docker-*.yml" },
+	command = "set filetype=yaml.docker-compose",
+})

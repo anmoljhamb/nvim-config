@@ -87,6 +87,12 @@ return {
 		lspconfig["docker_compose_language_service"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "yaml", "yaml.docker-compose" }, -- Matches Docker Compose files
+			settings = {
+				dockerComposeLanguageService = {
+					format = { enabled = true }, -- Optional: Enable formatting
+				},
+			},
 		})
 
 		lspconfig["dockerls"].setup({
