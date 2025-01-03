@@ -217,7 +217,7 @@ return {
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			root_dir = require("lspconfig").util.root_pattern(".git", "pyrightconfig.json", "requirements.txt"),
+			root_dir = require("lspconfig").util.root_pattern("pyrightconfig.json", "requirements.txt", ".git"),
 		})
 
 		-- configure arduino_language_server server
