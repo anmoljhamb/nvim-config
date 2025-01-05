@@ -40,7 +40,7 @@ km.set("n", "<leader>sx", ":close<CR>", { desc = "Close current split window" })
 km.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })
 km.set("n", "<A-t>", ":tabnew<CR>", { desc = "New Tab" })
 km.set("n", "<leader>tw", ":tabclose<CR>", { desc = "Close Tab" })
-km.set("n", "<Tab>", ":tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+-- km.set("n", "<Tab>", ":tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 km.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 km.set("n", "<S-Tab>", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 
@@ -145,3 +145,7 @@ km.set("n", "<leader>yf", "ggVGy<c-o>", { desc = "Yank the current file" })
 km.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source the NeoVim config" })
 km.set("n", "<leader>x", ":.lua<CR>", { desc = "Execute the current line" })
 km.set("v", "<leader>x", ":lua<CR>", { desc = "Execute the current selection" })
+
+-- Fold
+km.set("v", "<leader>fc", ":<C-U>'<,'>foldclose<CR>", { noremap = true, silent = true })
+km.set("v", "<leader>fo", ":<C-U>'<,'>foldopen<CR>", { noremap = true, silent = true })
