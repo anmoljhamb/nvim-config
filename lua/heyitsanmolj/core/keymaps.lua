@@ -83,7 +83,7 @@ km.set("x", "<leader>p", [["_dP]], { desc = "Paste without yanking" })
 --
 
 -- NvimTreeToggle
-km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle NvimTree" })
+km.set("n", "<A-b>", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>", { desc = "Toggle NvimTree", silent = true })
 
 -- Telescope
 -- Files
@@ -126,10 +126,10 @@ km.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree" })
 
 -- Vim TMUX Navigator
 --
-km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>", { desc = "Tmux navigate" })
-km.set("n", "<c-j>", ":TmuxNavigateDown<CR>", { desc = "Tmux navigate" })
-km.set("n", "<c-k>", ":TmuxNavigateUp<CR>", { desc = "Tmux navigate" })
-km.set("n", "<c-l>", ":TmuxNavigateRight<CR>", { desc = "Tmux navigate" })
+km.set("n", "<c-h>", ":TmuxNavigateLeft<CR>", { desc = "Tmux navigate", silent = true })
+km.set("n", "<c-j>", ":TmuxNavigateDown<CR>", { desc = "Tmux navigate", silent = true })
+km.set("n", "<c-k>", ":TmuxNavigateUp<CR>", { desc = "Tmux navigate", silent = true })
+km.set("n", "<c-l>", ":TmuxNavigateRight<CR>", { desc = "Tmux navigate", silent = true })
 
 -- LSP
 --
