@@ -149,3 +149,5 @@ km.set("v", "<leader>x", ":lua<CR>", { desc = "Execute the current selection" })
 -- Fold
 km.set("v", "<leader>fc", ":<C-U>'<,'>foldclose<CR>", { noremap = true, silent = true })
 km.set("v", "<leader>fo", ":<C-U>'<,'>foldopen<CR>", { noremap = true, silent = true })
+
+km.set("n", "<leader>db", ":DBUIToggle<CR>")
