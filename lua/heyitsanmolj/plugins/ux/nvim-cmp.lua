@@ -8,6 +8,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
+		"kristijanhusak/vim-dadbod-completion",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -50,6 +51,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
+				{ name = "vim-dadbod-completion" },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

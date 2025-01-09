@@ -19,6 +19,7 @@ require("lazy").setup({
 	{ import = "heyitsanmolj.plugins.snippets" },
 	{ import = "heyitsanmolj.plugins.ui" },
 	{ import = "heyitsanmolj.plugins.ux" },
+	{ import = "heyitsanmolj.plugins.db" },
 }, {
 	checker = {
 		enabled = true,
