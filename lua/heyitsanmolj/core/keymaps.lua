@@ -47,7 +47,6 @@ km.set("n", "<S-Tab>", ":tabp<CR>", { desc = "Go to previous tab" }) --  go to p
 km.set("n", "n", "nzzzv", { desc = "Center while searching" })
 km.set("n", "N", "Nzzzv", { desc = "Center while searching" })
 km.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
-km.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 km.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
 km.set("n", "<A-q>", "<cmd>copen<CR>", { desc = "Open quick fix list" })
 km.set("n", "]q", "<cmd>cnext<CR>zz", { desc = "Next quick fix" })
