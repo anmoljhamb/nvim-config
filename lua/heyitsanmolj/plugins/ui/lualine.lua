@@ -7,6 +7,9 @@ return {
 			opts = {
 				theme = local_theme,
 			},
+			sections = {
+				lualine_c = { { "filename", path = 1 } }, -- path = 1 for relative path, use 2 for absolute
+			},
 		})
 	end,
 }

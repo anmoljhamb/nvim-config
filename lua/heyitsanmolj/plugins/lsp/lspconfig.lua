@@ -1,3 +1,31 @@
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local new_client = vim.lsp.get_client_by_id(args.data.client_id)
+		if not new_client then
+			return
+		end
+
+		local root_dir = new_client.config.root_dir
+		local client_name = new_client.name
+
+		-- Find all clients with same name and root_dir
+		local similar_clients = vim.tbl_filter(function(c)
+			return c.name == client_name and c.config.root_dir == root_dir and c.id ~= new_client.id
+		end, vim.lsp.get_active_clients())
+
+		-- Stop all but the most recent one (newly attached)
+		for _, dup in ipairs(similar_clients) do
+			vim.lsp.stop_client(dup.id)
+			vim.schedule(function()
+				vim.notify(
+					string.format("🛑 Killed duplicate %s client (id: %d) for root %s", client_name, dup.id, root_dir),
+					vim.log.levels.WARN
+				)
+			end)
+		end
+	end,
+})
+
 local function organize_imports()
 	local params = {
 		command = "_typescript.organizeImports",
@@ -34,17 +62,6 @@ return {
 		local util = require("lspconfig/util")
 
 		local on_attach = function(_, bufnr)
-			local clients = vim.lsp.get_clients()
-			local seen = {}
-			for _, client in ipairs(clients) do
-				local key = client.name .. client.root_dir
-				if seen[key] then
-					client:stop(true) -- forcibly stop duplicate client
-				else
-					seen[key] = true
-				end
-			end
-
 			opts.buffer = bufnr
 
 			-- set keybinds
@@ -239,6 +256,7 @@ return {
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			single_file_support = false,
 			root_dir = require("lspconfig").util.root_pattern("pyrightconfig.json", "requirements.txt", ".git"),
 		})
 
