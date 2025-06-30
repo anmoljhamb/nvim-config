@@ -1,42 +1,45 @@
-return {
+return { -- Autoformat
 	"stevearc/conform.nvim",
-	lazy = true,
-	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
-	config = function()
-		local conform = require("conform")
-
-		conform.setup({
-			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				["jsonc"] = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
-				lua = { "stylua" },
-				python = { "black", "isort" },
-				php = { "pretty-php" },
-				java = { "google-java-format" },
-			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 3000,
-			},
-		})
-
-		vim.keymap.set({ "n", "v" }, "<leader>ff", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 3000,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
-	end,
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
+	keys = {
+		{
+			"<leader>f",
+			function()
+				require("conform").format({ async = true, lsp_format = "fallback" })
+			end,
+			mode = "",
+			desc = "[F]ormat buffer",
+		},
+	},
+	opts = {
+		notify_on_error = false,
+		format_on_save = function(bufnr)
+			local disable_filetypes = {}
+			if disable_filetypes[vim.bo[bufnr].filetype] then
+				return nil
+			else
+				return {
+					timeout_ms = 1000,
+					lsp_format = "fallback",
+				}
+			end
+		end,
+		formatters_by_ft = {
+			lua = { "stylua" },
+			javascript = { "prettierd" },
+			typescript = { "prettierd" },
+			javascriptreact = { "prettierd" },
+			typescriptreact = { "prettierd" },
+			svelte = { "prettierd" },
+			css = { "prettierd" },
+			html = { "prettierd" },
+			json = { "prettierd" },
+			yaml = { "prettierd" },
+			["jsonc"] = { "prettierd" },
+			markdown = { "prettierd" },
+			graphql = { "prettierd" },
+			python = { "black", "isort" },
+		},
+	},
 }
