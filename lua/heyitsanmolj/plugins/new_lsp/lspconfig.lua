@@ -43,7 +43,7 @@ return {
 				-- Jump to the definition of the word under your cursor.
 				--  This is where a variable was first declared, or where a function is defined, etc.
 				--  To jump back, press <C-t>.
-				map("<leader>gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+				map("<leader>gds", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header.
@@ -175,6 +175,9 @@ return {
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
+			emmet_ls = {},
+			tailwindcss = {},
+			ts_ls = {},
 			pyright = {},
 			lua_ls = {
 				settings = {

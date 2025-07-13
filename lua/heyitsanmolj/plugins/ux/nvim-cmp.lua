@@ -17,15 +17,12 @@ return { -- Autocompletion
 				return "make install_jsregexp"
 			end)(),
 			dependencies = {
-				-- `friendly-snippets` contains a variety of premade snippets.
-				--    See the README about individual language/framework/plugin snippets:
-				--    https://github.com/rafamadriz/friendly-snippets
-				-- {
-				--   'rafamadriz/friendly-snippets',
-				--   config = function()
-				--     require('luasnip.loaders.from_vscode').lazy_load()
-				--   end,
-				-- },
+				{
+					"rafamadriz/friendly-snippets",
+					config = function()
+						require("luasnip.loaders.from_vscode").lazy_load()
+					end,
+				},
 			},
 			opts = {},
 		},
@@ -60,7 +57,7 @@ return { -- Autocompletion
 			["<A-q>"] = { "select_prev", "fallback" },
 			["<A-e>"] = { "select_next", "fallback" },
 			["<Esc>"] = { "cancel", "fallback" },
-			["<CR>"] = { "accept_and_enter", "fallback" },
+			["<A-y>"] = { "select_and_accept", "fallback" },
 
 			-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 			--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -98,6 +95,10 @@ return { -- Autocompletion
 
 		-- Shows a signature help window while you type arguments for a function
 		signature = { enabled = true },
+		enabled = function()
+			local disabled_filetypes = { "NvimTree" }
+			return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+		end,
 	},
 }
 
