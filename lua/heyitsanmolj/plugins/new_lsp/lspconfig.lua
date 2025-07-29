@@ -1,3 +1,12 @@
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+	}
+	vim.lsp.buf.execute_command(params)
+	vim.notify("Organizing imports...", vim.log.levels.INFO)
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -24,6 +33,8 @@ return {
 					mode = mode or "n"
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
+
+				map("<leader>oi", organize_imports, "[O]rganize [I]mports")
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
@@ -130,8 +141,7 @@ return {
 			end,
 		})
 
-		-- Diagnostic Config
-		-- See :help vim.diagnostic.Opts
+		-- Diagnostic Config - Optimized for performance
 		vim.diagnostic.config({
 			severity_sort = true,
 			float = { border = "rounded", source = "if_many" },
@@ -147,16 +157,14 @@ return {
 			virtual_text = {
 				source = "if_many",
 				spacing = 2,
+				-- Optimize: Only show virtual text for errors to reduce clutter
+				severity = { min = vim.diagnostic.severity.ERROR },
 				format = function(diagnostic)
-					local diagnostic_message = {
-						[vim.diagnostic.severity.ERROR] = diagnostic.message,
-						[vim.diagnostic.severity.WARN] = diagnostic.message,
-						[vim.diagnostic.severity.INFO] = diagnostic.message,
-						[vim.diagnostic.severity.HINT] = diagnostic.message,
-					}
-					return diagnostic_message[diagnostic.severity]
+					return diagnostic.message
 				end,
 			},
+			-- Performance: Reduce update frequency
+			update_in_insert = false,
 		})
 
 		-- LSP servers and clients are able to communicate to each other what features they support.
@@ -178,7 +186,34 @@ return {
 			emmet_ls = {},
 			tailwindcss = {},
 			ts_ls = {},
-			pyright = {},
+			-- Ruff - BLAZING fast Python LSP written in Rust
+			ruff = {
+				init_options = {
+					settings = {
+						-- Ruff settings
+						args = {
+							"--config=pyproject.toml", -- Use your project config if available
+						},
+						-- Enable/disable specific features for speed
+						organizeImports = true,
+						fixAll = true,
+						showSyntaxErrors = true,
+					},
+				},
+			},
+			-- Optional: Add basedpyright for completions (faster than regular pyright)
+			basedpyright = {
+				settings = {
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "basic",
+							diagnosticMode = "openFilesOnly",
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = false, -- Faster startup
+						},
+					},
+				},
+			},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -191,24 +226,27 @@ return {
 		}
 		local ensure_installed = vim.tbl_keys(servers or {})
 
-		local var = require("heyitsanmolj.plugins.ui.formatting")
-		local dict = var.opts.formatters_by_ft
-
-		local function contains(tbl, val)
-			for _, v in ipairs(tbl) do
-				if v == val then
-					return true
-				end
-			end
-			return false
-		end
-
+		-- Optimize: Check if formatting config exists before accessing it
+		local status_ok, formatting_config = pcall(require, "heyitsanmolj.plugins.ui.formatting")
 		local formatters = {}
 
-		for _, value in pairs(dict) do
-			for i = 1, #value do
-				if not contains(formatters, value[i]) then
-					table.insert(formatters, value[i])
+		if status_ok and formatting_config.opts and formatting_config.opts.formatters_by_ft then
+			local dict = formatting_config.opts.formatters_by_ft
+
+			local function contains(tbl, val)
+				for _, v in ipairs(tbl) do
+					if v == val then
+						return true
+					end
+				end
+				return false
+			end
+
+			for _, value in pairs(dict) do
+				for i = 1, #value do
+					if not contains(formatters, value[i]) then
+						table.insert(formatters, value[i])
+					end
 				end
 			end
 		end
