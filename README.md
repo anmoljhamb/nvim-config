@@ -4,7 +4,7 @@ This repository contains my personalized Neovim configuration, designed to enhan
 
 ## Screenshot
 
-![Neovim Configuration Screenshot](./screenshot_1.png)
+![Neovim Configuration Screenshot](./screenshot.png)
 
 ## Features
 
