@@ -7,6 +7,16 @@ local function organize_imports()
 	vim.notify("Organizing imports...", vim.log.levels.INFO)
 end
 
+local lsp_log_group = vim.api.nvim_create_augroup("lsp-log-timings", { clear = true })
+
+vim.api.nvim_create_autocmd("BufReadPre", {
+	group = lsp_log_group,
+	callback = function(args)
+		-- store open time per buffer
+		vim.b[args.buf].lsp_open_start = vim.loop.hrtime()
+	end,
+})
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
