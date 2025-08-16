@@ -186,25 +186,9 @@ return {
 			emmet_ls = {},
 			tailwindcss = {},
 			ts_ls = {},
-			-- Ruff - BLAZING fast Python LSP written in Rust
-			ruff = {
-				init_options = {
-					settings = {
-						-- Ruff settings
-						args = {
-							"--config=pyproject.toml", -- Use your project config if available
-						},
-						-- Enable/disable specific features for speed
-						organizeImports = true,
-						fixAll = true,
-						showSyntaxErrors = true,
-					},
-				},
-			},
-			-- Optional: Add basedpyright for completions (faster than regular pyright)
-			basedpyright = {
+			pyright = {
 				settings = {
-					basedpyright = {
+					pyright = {
 						analysis = {
 							typeCheckingMode = "basic",
 							diagnosticMode = "openFilesOnly",
